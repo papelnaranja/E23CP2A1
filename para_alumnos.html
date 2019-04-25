@@ -50,7 +50,7 @@
 				<label for="camposelector">Selector</label>
 				<input type="Text" name="camposelector" id="camposelector" class="form-control">
 			</div>
-			<input type="button" id="boton" value="Ejecutar Selector" class="btn btn-warning btn-sm">
+			<input type="button" id="boton" onclick="selector()" value="Ejecutar Selector" class="btn btn-warning btn-sm">
 		</form>
 		<div class="row">
 			<div class="col-md-6">
@@ -113,6 +113,28 @@
 
 <script>
 	// Agregar las instrucciones JS para resolver el ejercicio aquí.
+	function selector() {
+
+		var inputValue = $('#camposelector').val();
+		console.log(inputValue[0]);
+		if (inputValue[0] != '$') {
+			$('#camposelector').val('');
+		} else {
+			var theCode = eval(inputValue);
+					theCode.css({ 'font-size': '30px', 'transition': 'all .5s' });
+			var history = $("<li></li>").text(inputValue);
+			var selected = $("<li></li>").text(theCode.length);
+				$('.historial').append(history);
+			$('.seleccionados').append(selected);	
+		}
+
+
+	
+		
+
+
+	}
+
 </script>
 
 </body>
