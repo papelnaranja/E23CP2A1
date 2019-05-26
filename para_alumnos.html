@@ -114,25 +114,18 @@
 <script>
 	// Agregar las instrucciones JS para resolver el ejercicio aquí.
 	function selector() {
-
 		var inputValue = $('#camposelector').val();
 		console.log(inputValue[0]);
 		if (inputValue[0] != '$') {
 			$('#camposelector').val('');
 		} else {
 			var theCode = eval(inputValue);
-					theCode.css({ 'font-size': '30px', 'transition': 'all .5s' });
+			theCode.css({ 'font-size': '30px', 'transition': 'all .5s' });
 			var history = $("<li></li>").text(inputValue);
 			var selected = $("<li></li>").text(theCode.length);
-				$('.historial').append(history);
+			$('.historial').append(history);
 			$('.seleccionados').append(selected);	
 		}
-
-
-	
-		
-
-
 	}
 
 </script>
